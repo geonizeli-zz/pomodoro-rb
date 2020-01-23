@@ -24,7 +24,7 @@ class Settings
 
         save options
       rescue => exception
-        p 'settings.json is breaked'
+        p exception
       end
     end
   end
@@ -52,8 +52,9 @@ class Settings
   end
 
   def save(options)
-    file = File.open('settings.json', 'w')
-    file.print options.to_json
-    file.close
+    File.open 'settings.json', 'w'  do |f|
+      f.print options.to_json
+      f.close
+    end
   end
 end
