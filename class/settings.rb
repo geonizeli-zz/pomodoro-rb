@@ -1,5 +1,4 @@
 require 'json'
-require 'awesome-pry'
 class Settings
   attr_reader :notification, :times
 
